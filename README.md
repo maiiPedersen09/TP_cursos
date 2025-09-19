@@ -15,7 +15,7 @@ La aplicación modela un sistema en el cual los usuarios pueden acceder a difere
 
 
 ## Modelo de datos
-(<img width="1918" height="862" alt="Captura de pantalla 2025-09-19 185854" src="https://github.com/user-attachments/assets/d3b27ec0-9973-43c7-a166-f930186f68d2" />
+<img width="1918" height="862" alt="Captura de pantalla 2025-09-19 185854" src="https://github.com/user-attachments/assets/d3b27ec0-9973-43c7-a166-f930186f68d2" />
 
 
 ---
