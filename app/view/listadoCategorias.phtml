@@ -26,11 +26,13 @@
                             Comenzar a Explorar →
                         </span>
                     </a>
-                        <div class="card-actions">                
+                        <div class="card-actions">
+                            <?php if (!empty($_SESSION['ES_ADMIN'])): ?>                
                             <div class="admin-actions">
                                 <a href="editarCat/<?php echo $cat->id ?>" class="btn-admin-edit">Editar</a>
                                 <a href="eliminarCat/<?php echo $cat->id ?>" class="btn-admin-delete">Borrar</a>
                             </div>
+                            <?php endif ?>
                         </div>
                     </div>
                 <?php endforeach; ?>

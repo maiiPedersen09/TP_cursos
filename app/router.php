@@ -1,6 +1,7 @@
 <?php
 require_once 'libs/response.php';
 require_once 'controller/cursos_controller.php';
+require_once 'controller/auth_controller.php';
 require_once 'controller/categorias_controller.php';
 
 define ('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' .$_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
@@ -67,6 +68,28 @@ switch ($params[0]) {
     case 'detalle':
         $controller = new cursos_controller($res);
         $controller->verDetalle($params[1]); 
+        break;
+    
+    case 'Login':
+        $controller = new auth_controller();
+        $controller->login();
+        break;
+
+    case 'Logout':
+        $controller = new auth_controller();
+        $controller->logout();
+        break;
+    case 'Register':
+        $controller = new auth_controller();
+        $controller->register();
+        break;
+    case 'showLogin':
+        $controller = new auth_controller();
+        $controller->showLogin();
+        break;
+    case 'showRegister':
+        $controller = new auth_controller();
+        $controller->showRegister();
         break;
     default:
         # code...

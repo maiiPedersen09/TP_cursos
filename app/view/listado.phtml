@@ -21,11 +21,12 @@
 
                 <div class="card-actions">
                     <a href="<?php echo BASE_URL; ?>detalle/<?php echo $cur->id ?>" class="btn-visualizar">Ver Curso</a>
-                    
-                    <div class="admin-actions">
-                        <a href="editarCurso/<?php echo $cur->id ?>" class="btn-admin-edit">Editar</a>
-                        <a href="eliminarCurso/<?php echo $cur->id ?>" class="btn-admin-delete">Borrar</a>
-                    </div>
+                    <?php if (!empty($_SESSION['ES_ADMIN'])): ?>
+                        <div class="admin-actions">
+                            <a href="editarCurso/<?php echo $cur->id ?>" class="btn-admin-edit">Editar</a>
+                            <a href="eliminarCurso/<?php echo $cur->id ?>" class="btn-admin-delete">Borrar</a>
+                        </div>
+                    <?php endif ?>
                 </div>
             </div>
 

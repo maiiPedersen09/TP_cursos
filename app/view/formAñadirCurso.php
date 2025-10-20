@@ -1,6 +1,6 @@
 <?php include 'view/includes/header.phtml'; ?>
 
-<form action="<?php echo BASE_URL; ?>añadirCurso" method="POST" enctype="multipart/form-data" class="my-4 form-rf-importados form">
+<form action="<?php echo BASE_URL; ?>añadirCurso" method="POST" enctype="multipart/form-data" class="my-4 form">
   <div class="row">
     <h3 class="title-form">Agregar Curso</h3>
 
