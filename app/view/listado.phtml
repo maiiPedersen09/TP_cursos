@@ -1,0 +1,36 @@
+<?php include 'view/includes/header.phtml'; ?>
+<main class="content-wrapper"> 
+    <div class="container-listado">
+        <h1 class="section-title">Explora Nuestros Cursos</h1>
+
+        <div class="listado-cursos-grid">
+            <?php foreach($curso as $cur){ ?>
+
+            <div class="curso-card">
+                <div class="card-header">
+                    <img src="<?php echo BASE_URL; ?>view/imgs/<?php echo $cur->imagen ?>" alt="Imagen de <?php echo $cur->titulo ?>">
+                    <h4 class="card-category">
+                        <?php echo $cur->categoria_nombre ?>
+                    </h4>
+                </div>
+
+                <div class="card-body">
+                    <h3 class="card-title"><?php echo $cur->titulo ?></h3>
+                    <p class="card-description"><?php echo $cur->descripcion ?></p>
+                </div>
+
+                <div class="card-actions">
+                    <a href="<?php echo BASE_URL; ?>detalle/<?php echo $cur->id ?>" class="btn-visualizar">Ver Curso</a>
+                    
+                    <div class="admin-actions">
+                        <a href="editarCurso/<?php echo $cur->id ?>" class="btn-admin-edit">Editar</a>
+                        <a href="eliminarCurso/<?php echo $cur->id ?>" class="btn-admin-delete">Borrar</a>
+                    </div>
+                </div>
+            </div>
+
+            <?php } ?>
+        </div>
+    </div>
+</main>
+<?php include 'view/includes/footer.phtml'; ?>

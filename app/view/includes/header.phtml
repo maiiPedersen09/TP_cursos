@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P&C | Tu Plataforma de Cursos Online</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/style.css"> 
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/header.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/footer.css">
+</head>
+
+
+<header class="main-header">
+    <div class="header-container">
+        <a href="<?php echo BASE_URL; ?>listar" class="logo">
+            <span class="logo-text">P&C</span> 
+        </a>
+
+    <nav class="main-nav">
+        <a href="<?php echo BASE_URL; ?>listar">Cursos</a>
+            <div class="dropdown">
+                <a href="<?php echo BASE_URL; ?>listarCategorias" class="dropbtn">Secciones <i class="fas fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <?php if (isset($categorias) && is_array($categorias)): ?>
+                        <?php foreach ($categorias as $cat): ?>
+                            <a href="<?php echo BASE_URL; ?>listarPorCategoria/<?php echo $cat->id; ?>">
+                                <?php echo ($cat->nombre); ?>
+                            </a>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <a href="#">No hay secciones</a>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <a href="<?php echo BASE_URL; ?>mostrarFormDeAñadir">Añadir</a>
+            <a href="#">Contacto</a>
+    </nav>
+
+
+        <div class="header-actions">
+            <a href="login.html" class="btn-login">Ingresar</a>
+            <a href="registro.html" class="btn-register">¡Empieza Gratis!</a>
+        </div>
+
+        <button class="menu-toggle" aria-label="Abrir Menú">
+            <i class="fas fa-bars"></i> 
+            </button>
+    </div>
+</header>

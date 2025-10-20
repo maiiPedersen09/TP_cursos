@@ -1,0 +1,37 @@
+<?php include 'view/includes/header.phtml'; ?>
+
+<main class="main-content">
+    <section class="category-list-section">
+        <div class="category-header">
+            <h1 class="section-title">Explora Nuestras Secciones de Cursos</h1>
+            <p class="section-subtitle">Encuentra el camino hacia el conocimiento que buscas en nuestra biblioteca de temas.</p>
+        </div>
+
+        <div class="category-grid">
+            
+            <?php if (isset($categorias) && is_array($categorias)): ?>
+                <?php foreach ($categorias as $cat): ?>
+                    
+                    <a href="<?php echo BASE_URL; ?>listarPorCategoria/<?php echo ($cat->id); ?>" class="category-card">
+                        
+                        <div class="card-icon">
+                            <i class="fas fa-code"></i> 
+                        </div>
+
+                        <h2 class="card-title">
+                            <?php echo($cat->nombre); ?>
+                        </h2>
+                        
+                        <span class="card-count">
+                            Comenzar a Explorar →
+                        </span>
+                    </a>
+                    
+                <?php endforeach; ?>
+            <?php endif; ?>
+
+        </div>
+    </section>
+</main>
+
+<?php include 'view/includes/footer.phtml'; ?>
