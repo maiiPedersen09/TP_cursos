@@ -6,4 +6,7 @@ class categorias_view{
     function mostrarFormCat($categorias){
         require_once 'formAñadirCat.php';
     }
+    function mostrarUpdateCategoria($categoria){
+        require_once 'formUpdateCat.php';
+    }
 }

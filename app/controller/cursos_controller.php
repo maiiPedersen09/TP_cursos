@@ -40,7 +40,7 @@
         $imagenUrl = null;
 
         if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
-            $directorioDestino = 'app/view/imgs/';
+            $directorioDestino = __DIR__ . '/../view/imgs/';
             $archivoTmp = $_FILES['imagen']['tmp_name'];
             $nombreArchivo = uniqid() . '-' . $_FILES['imagen']['name'];
 

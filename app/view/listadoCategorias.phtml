@@ -11,7 +11,7 @@
             
             <?php if (isset($categorias) && is_array($categorias)): ?>
                 <?php foreach ($categorias as $cat): ?>
-                    
+                    <div class="category-card">
                     <a href="<?php echo BASE_URL; ?>listarPorCategoria/<?php echo ($cat->id); ?>" class="category-card">
                         
                         <div class="card-icon">
@@ -26,7 +26,13 @@
                             Comenzar a Explorar →
                         </span>
                     </a>
-                    
+                        <div class="card-actions">                
+                            <div class="admin-actions">
+                                <a href="editarCat/<?php echo $cat->id ?>" class="btn-admin-edit">Editar</a>
+                                <a href="eliminarCat/<?php echo $cat->id ?>" class="btn-admin-delete">Borrar</a>
+                            </div>
+                        </div>
+                    </div>
                 <?php endforeach; ?>
             <?php endif; ?>
 

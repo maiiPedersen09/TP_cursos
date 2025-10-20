@@ -10,6 +10,7 @@
                 <input name="nombre" type="text" class="form-control" required>
             </div>
         </div>
+  </div>
   <button type="submit" class="btn btn-primary mt-4">Guardar Categoria</button>
 </form>
 

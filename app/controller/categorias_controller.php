@@ -29,4 +29,35 @@
         $categorias = $this->categorias_model->getCategorias();
         return $this->viewC->mostrarFormCat($categorias);
     }
+
+    
+    function updateCategorias($id){
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+            $categoria = $this->categorias_model->getCategoriaID($id);
+
+            if (!$categoria) {
+                return $this->viewError->mostrarError("La categoria a editar no existe.");
+            }
+
+            return $this->viewC->mostrarUpdateCategoria($categoria);
+        }
+        $nombre = $_POST['nombre'];
+        
+        $catActual = $this->categorias_model->getCategoriaID($id);
+        if(!$catActual){
+            return $this->viewError->mostrarError("La categoria a editar no existe.");
+        }
+
+        $this->categorias_model->editarCategoria($nombre, $id);
+        header('Location: ' . BASE_URL . "listarPorCategoria/$id");
+        exit;
+    }
+
+
+    function eliminarCategoria($id){
+        $this->categorias_model->deleteCategoria($id);
+
+        header('Location: ' . BASE_URL . 'listarCategorias');
+        exit;
+    }
 }

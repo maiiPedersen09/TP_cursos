@@ -48,7 +48,18 @@ switch ($params[0]) {
         $controllerCategoria = new categorias_controller($res);
         $controllerCategoria -> addCategorias();
         break;
-    
+    case 'mostrarFormCat':
+        $controllerCategoria = new categorias_controller($res);
+        $controllerCategoria -> mostrarFormCat();
+        break;
+    case 'eliminarCat':
+        $controllerCategoria = new categorias_controller($res);
+        $controllerCategoria -> eliminarCategoria($params[1]);
+        break;
+    case 'editarCat':
+        $controllerCategoria = new categorias_controller($res);
+        $controllerCategoria -> updateCategorias($params[1] ?? null);
+        break;
     case 'listarPorCategoria':
         $controller = new cursos_controller($res);
         $controller->listarPorCategoria($params); 
